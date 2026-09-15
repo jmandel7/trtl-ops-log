@@ -1,0 +1,21 @@
+name: "TRTL Ops Log"
+version: "1.0.0"
+slug: "trtl_ops_log"
+description: "Shared coordination MCP server for multiple AI agents (Claude, ChatGPT, etc.) working on the same TRTL WRLD Home Assistant instance — activity log, soft claims, and an open-issues tracker."
+url: "https://github.com/jmandel7/trtl-ops-log"
+arch:
+  - amd64
+  - aarch64
+  - armv7
+init: false
+startup: application
+boot: auto
+host_network: false
+ports:
+  9584/tcp: 9584
+ports_description:
+  9584/tcp: "TRTL Ops Log MCP server (proxy this the same way you proxy ha-mcp)"
+options:
+  log_level: "info"
+schema:
+  log_level: "list(debug|info|warning|error)"
